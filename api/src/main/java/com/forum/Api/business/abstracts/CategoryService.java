@@ -4,6 +4,6 @@ import com.forum.Api.entities.concretes.Category;
 
 import java.util.List;
 
-public interface CategoriesService {
+public interface CategoryService {
     List<Category> getAll();
 }

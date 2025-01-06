@@ -1,6 +1,6 @@
 package com.forum.Api.entities.enums;
 
-public enum TopicStatus {
+public enum PostStatus {
     ACTIVE,
     INACTIVE,
     CLOSED

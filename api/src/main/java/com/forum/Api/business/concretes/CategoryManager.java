@@ -1,6 +1,6 @@
 package com.forum.Api.business.concretes;
 
-import com.forum.Api.business.abstracts.CategoriesService;
+import com.forum.Api.business.abstracts.CategoryService;
 import com.forum.Api.dataAccess.abstracts.CategoryRepository;
 import com.forum.Api.entities.concretes.Category;
 import org.springframework.stereotype.Service;
@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CategoriesManager implements CategoriesService {
+public class CategoryManager implements CategoryService {
     private final CategoryRepository categoryRepository;
 
-    public CategoriesManager(CategoryRepository categoryRepository) {
+    public CategoryManager(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 

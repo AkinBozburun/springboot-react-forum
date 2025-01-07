@@ -8,19 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class InMemoryPostRepository implements PostRepository {
+public class InMemoryPostRepository {
 
     private final List<Post> posts;
 
     public InMemoryPostRepository(){
         this.posts = new ArrayList<Post>();
-        posts.add(new Post(1,"example5"));
-        posts.add(new Post(2,"example6"));
-        posts.add(new Post(3,"example7"));
-    }
-
-    @Override
-    public List<Post> getAll() {
-        return this.posts;
     }
 }

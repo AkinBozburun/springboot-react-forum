@@ -1,11 +1,15 @@
 package com.forum.Api.business.concretes;
 
 import com.forum.Api.business.abstracts.PostService;
+import com.forum.Api.business.responses.GetAllPostResponse;
 import com.forum.Api.dataAccess.abstracts.PostRepository;
 import com.forum.Api.entities.concretes.Post;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PostManager implements PostService {
@@ -16,7 +20,21 @@ public class PostManager implements PostService {
     }
 
     @Override
-    public List<Post> getAll() {
-        return postRepository.getAll();
+    public List<GetAllPostResponse> getAll() {
+         List<GetAllPostResponse> getAllPostResponse = new ArrayList<>();
+        List<Post> posts =  postRepository.findAll();
+
+        for(Post post : posts){
+            GetAllPostResponse asd = new GetAllPostResponse();
+            asd.setTitle(post.getTitle());
+            asd.setContent(post.getContent());
+            getAllPostResponse.add(asd);
+        }
+        return getAllPostResponse;
+    }
+
+    @Override
+    public Post getPostById(int id) {
+        return postRepository.findById(id).orElseThrow();
     }
 }

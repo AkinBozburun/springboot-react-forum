@@ -17,6 +17,6 @@ public class CategoryManager implements CategoryService {
 
     @Override
     public List<Category> getAll() {
-        return categoryRepository.getAll();
+        return categoryRepository.findAll();
     }
 }

@@ -1,12 +1,11 @@
 package com.forum.Api.controllers;
 
 import com.forum.Api.business.abstracts.PostService;
+import com.forum.Api.business.requests.CreatePostRequest;
 import com.forum.Api.business.responses.GetAllPostResponse;
 import com.forum.Api.entities.concretes.Post;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,4 +29,8 @@ public class PostsController {
     public Post getPostById(@PathVariable int id){
         return this.postService.getPostById(id);
     }
+
+    @PutMapping("/add")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createPost(@RequestBody CreatePostRequest createPostRequest){ this.postService.createPost(createPostRequest);}
 }

@@ -2,6 +2,8 @@ package com.forum.Api.business.concretes;
 
 import com.forum.Api.business.abstracts.PostService;
 import com.forum.Api.business.requests.CreatePostRequest;
+import com.forum.Api.business.requests.DeletePostRequest;
+import com.forum.Api.business.requests.UpdatePostRequest;
 import com.forum.Api.business.responses.GetAllPostResponse;
 import com.forum.Api.dataAccess.abstracts.PostRepository;
 import com.forum.Api.entities.concretes.Post;
@@ -27,6 +29,7 @@ public class PostManager implements PostService {
 
         for(Post post : posts){
             GetAllPostResponse asd = new GetAllPostResponse();
+            asd.setId(post.getId());
             asd.setTitle(post.getTitle());
             asd.setContent(post.getContent());
             getAllPostResponse.add(asd);
@@ -44,6 +47,19 @@ public class PostManager implements PostService {
         Post post = new Post();
         post.setTitle(createPostRequest.getTitle());
         post.setContent(createPostRequest.getContent());
+        postRepository.save(post);
+    }
+
+    @Override
+    public void deletePost(DeletePostRequest deletePostRequest) {
+        postRepository.deleteById(deletePostRequest.getId());
+    }
+
+    @Override
+    public void updatePost(UpdatePostRequest updatePostRequest) {
+        Post post = postRepository.findById(updatePostRequest.getId()).orElseThrow();;
+        post.setTitle(updatePostRequest.getTitle());
+        post.setContent(updatePostRequest.getContent());
         postRepository.save(post);
     }
 }

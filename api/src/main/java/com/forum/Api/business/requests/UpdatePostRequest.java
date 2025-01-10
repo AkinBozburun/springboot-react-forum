@@ -1,4 +1,4 @@
-package com.forum.Api.business.responses;
+package com.forum.Api.business.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class GetAllPostResponse {
+public class UpdatePostRequest {
     private int id;
     private String title;
     private String content;

@@ -2,6 +2,8 @@ package com.forum.Api.controllers;
 
 import com.forum.Api.business.abstracts.PostService;
 import com.forum.Api.business.requests.CreatePostRequest;
+import com.forum.Api.business.requests.DeletePostRequest;
+import com.forum.Api.business.requests.UpdatePostRequest;
 import com.forum.Api.business.responses.GetAllPostResponse;
 import com.forum.Api.entities.concretes.Post;
 import org.springframework.http.HttpStatus;
@@ -33,4 +35,17 @@ public class PostsController {
     @PutMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(@RequestBody CreatePostRequest createPostRequest){ this.postService.createPost(createPostRequest);}
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.OK)
+    public void updatePost(@RequestBody UpdatePostRequest updatePostRequest){
+        this.postService.updatePost(updatePostRequest);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deletePost(int id){
+        DeletePostRequest deletePostRequest  = new DeletePostRequest(id);
+        this.postService.deletePost(deletePostRequest);
+    }
 }

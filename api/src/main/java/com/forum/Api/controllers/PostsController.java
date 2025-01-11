@@ -32,7 +32,7 @@ public class PostsController {
         return this.postService.getPostById(id);
     }
 
-    @PutMapping("/add")
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(@RequestBody CreatePostRequest createPostRequest){ this.postService.createPost(createPostRequest);}
 

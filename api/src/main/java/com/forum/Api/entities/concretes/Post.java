@@ -1,5 +1,6 @@
 package com.forum.Api.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,10 +33,12 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "author_id")
+    @JsonBackReference
     private User author;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonBackReference
     private Category category;
 
     @PrePersist

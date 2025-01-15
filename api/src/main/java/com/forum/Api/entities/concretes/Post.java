@@ -1,17 +1,17 @@
 package com.forum.Api.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "post")
+@Table(name = "posts")
 @Entity
 public class Post {
     @Id
@@ -23,7 +23,7 @@ public class Post {
     private String title;
 
     @Column(name = "content", nullable = false, length = 1000)
-    private  String content;
+    private String content;
 
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
@@ -33,13 +33,13 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "author_id")
-    @JsonBackReference
     private User author;
 
-    @ManyToOne
     @JoinColumn(name = "category_id")
-    @JsonBackReference
-    private Category category;
+    private int categoryId;
+
+    @OneToMany(mappedBy = "postId")
+    private List<Comment> comments;
 
     @PrePersist
     public void onCreate() {

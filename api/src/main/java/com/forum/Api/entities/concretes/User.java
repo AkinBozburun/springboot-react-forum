@@ -1,6 +1,6 @@
 package com.forum.Api.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.forum.Api.entities.enums.Role;
 import com.forum.Api.entities.enums.UserStatus;
 import jakarta.persistence.*;
@@ -59,9 +59,12 @@ public class User {
     private boolean banned;
 
     @OneToMany(mappedBy = "author")
-    @JsonManagedReference
+    @JsonBackReference
     private List<Post> posts;
 
+    @OneToMany(mappedBy = "author")
+    @JsonBackReference
+    private List<Comment> comments;
 
     @PrePersist
     public void onCreate() {

@@ -11,9 +11,7 @@ import com.forum.Api.entities.concretes.Post;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PostManager implements PostService {
@@ -29,11 +27,15 @@ public class PostManager implements PostService {
         List<Post> posts =  postRepository.findAll();
 
         for(Post post : posts){
-            GetAllPostResponse asd = new GetAllPostResponse();
-            asd.setId(post.getId());
-            asd.setTitle(post.getTitle());
-            asd.setContent(post.getContent());
-            getAllPostResponse.add(asd);
+            GetAllPostResponse temp = new GetAllPostResponse();
+            temp.setId(post.getId());
+            temp.setTitle(post.getTitle());
+            temp.setContent(post.getContent());
+            temp.setAuthor(post.getAuthor());
+            temp.setCreatedAt(post.getCreatedAt());
+            temp.setUpdatedAt(post.getUpdatedAt());
+            temp.setCategoryId(post.getCategoryId());
+            getAllPostResponse.add(temp);
         }
         return getAllPostResponse;
     }

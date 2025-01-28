@@ -1,7 +1,6 @@
-package com.forum.Api.business.responses;
+package com.forum.Api.business.responses.Post;
 
 import com.forum.Api.entities.concretes.User;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

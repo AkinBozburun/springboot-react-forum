@@ -1,9 +1,9 @@
 package com.forum.Api.controllers;
 
 import com.forum.Api.business.abstracts.UserService;
-import com.forum.Api.business.requests.CreateUserRequest;
-import com.forum.Api.business.requests.DeleteUserRequest;
-import com.forum.Api.business.requests.UpdateUserRequest;
+import com.forum.Api.business.requests.User.CreateUserRequest;
+import com.forum.Api.business.requests.User.DeleteUserRequest;
+import com.forum.Api.business.requests.User.UpdateUserRequest;
 import com.forum.Api.entities.concretes.User;
 import org.springframework.web.bind.annotation.*;
 

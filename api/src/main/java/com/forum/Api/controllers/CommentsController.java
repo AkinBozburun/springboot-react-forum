@@ -1,9 +1,9 @@
 package com.forum.Api.controllers;
 
 import com.forum.Api.business.abstracts.CommentService;
-import com.forum.Api.business.requests.CreateCommentRequest;
-import com.forum.Api.business.requests.DeleteCommentRequest;
-import com.forum.Api.business.requests.UpdateCommentRequest;
+import com.forum.Api.business.requests.Comment.CreateCommentRequest;
+import com.forum.Api.business.requests.Comment.DeleteCommentRequest;
+import com.forum.Api.business.requests.Comment.UpdateCommentRequest;
 import com.forum.Api.entities.concretes.Comment;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -1,10 +1,10 @@
 package com.forum.Api.business.abstracts;
 
-import com.forum.Api.business.requests.CreatePostRequest;
-import com.forum.Api.business.requests.DeletePostRequest;
-import com.forum.Api.business.requests.UpdatePostRequest;
-import com.forum.Api.business.responses.GetAllPostResponse;
-import com.forum.Api.business.responses.GetPostsByCategoryResponse;
+import com.forum.Api.business.requests.Post.CreatePostRequest;
+import com.forum.Api.business.requests.Post.DeletePostRequest;
+import com.forum.Api.business.requests.Post.UpdatePostRequest;
+import com.forum.Api.business.responses.Post.GetAllPostResponse;
+import com.forum.Api.business.responses.Post.GetPostsByCategoryResponse;
 import com.forum.Api.entities.concretes.Post;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.forum.Api.business.requests;
+package com.forum.Api.business.requests.Comment;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UpdatePostRequest {
-    private int id;
-    private String title;
+public class CreateCommentRequest {
+    private int postId;
     private String content;
 }

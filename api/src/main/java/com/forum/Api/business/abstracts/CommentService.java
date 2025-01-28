@@ -10,7 +10,7 @@ import java.util.List;
 public interface CommentService {
     Comment getCommentById(int id);
 
-    List<Comment> getCommentsByPostId(int id);
+    List<Comment> getCommentsByPostId(int postId, int skip, int limit);
 
     void createComment(CreateCommentRequest createCommentRequest);
 

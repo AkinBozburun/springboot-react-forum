@@ -19,14 +19,17 @@ public class CommentsController {
         this.commentService = commentService;
     }
 
-    @GetMapping("{id}")
-    public Comment getCommentById(@PathVariable int id) {
-        return this.commentService.getCommentById(id);
-    }
+//    @GetMapping("{id}")
+//    public Comment getCommentById(@PathVariable int id) {
+//        return this.commentService.getCommentById(id);
+//    }
 
-    @GetMapping("/post/{id}")
-    public List<Comment> getCommentsByPostId(@PathVariable int id) {
-        return this.commentService.getCommentsByPostId(id);
+    @GetMapping("/{postId}")
+    public List<Comment> getCommentsByPostId(
+            @PathVariable int postId,
+            @RequestParam(value = "skip", defaultValue = "0") int skip,
+            @RequestParam(value = "limit", defaultValue = "10") int limit)  {
+        return this.commentService.getCommentsByPostId(postId, skip, limit);
     }
 
     @PostMapping("/create")

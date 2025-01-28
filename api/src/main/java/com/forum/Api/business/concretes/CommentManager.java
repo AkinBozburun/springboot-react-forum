@@ -6,6 +6,8 @@ import com.forum.Api.business.requests.DeleteCommentRequest;
 import com.forum.Api.business.requests.UpdateCommentRequest;
 import com.forum.Api.dataAccess.abstracts.CommentRepository;
 import com.forum.Api.entities.concretes.Comment;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +27,9 @@ public class CommentManager implements CommentService {
     }
 
     @Override
-    public List<Comment> getCommentsByPostId(int id) {
-        return this.commentRepository.getCommentsByPostId(id);
+    public List<Comment> getCommentsByPostId(int postId, int skip, int limit) {
+        Pageable pageable = PageRequest.of(skip / limit, limit);
+        return commentRepository.getCommentByPostId(postId, pageable);
     }
 
     @Override

@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/posts")
@@ -33,9 +32,12 @@ public class PostsController {
         return this.postService.getPostById(id);
     }
 
-    @GetMapping("/category/{id}")
-    public List<GetPostsByCategoryResponse> getByCategory(@PathVariable int id){
-        return this.postService.getPostsByCategoryId(id);
+    @GetMapping("/category/{categoryId}")
+    public List<GetPostsByCategoryResponse> getByCategory(
+            @PathVariable int categoryId,
+            @RequestParam(value = "skip", defaultValue = "0") int skip,
+            @RequestParam(value = "limit", defaultValue = "10") int limit) {
+        return this.postService.getPostsByCategoryId(categoryId, skip, limit);
     }
 
     @PostMapping("/add")

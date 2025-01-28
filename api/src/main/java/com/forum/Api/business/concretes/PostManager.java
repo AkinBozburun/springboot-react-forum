@@ -8,6 +8,8 @@ import com.forum.Api.business.responses.GetAllPostResponse;
 import com.forum.Api.business.responses.GetPostsByCategoryResponse;
 import com.forum.Api.dataAccess.abstracts.PostRepository;
 import com.forum.Api.entities.concretes.Post;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,9 +43,10 @@ public class PostManager implements PostService {
     }
 
     @Override
-    public List<GetPostsByCategoryResponse> getPostsByCategoryId(int id) {
+    public List<GetPostsByCategoryResponse> getPostsByCategoryId(int categoryId, int skip, int limit) {
         List<GetPostsByCategoryResponse> getPostsByCategoryResponse = new ArrayList<>();
-        List<Post> posts = postRepository.getPostsByCategoryId(id);
+        Pageable pageable = PageRequest.of(skip / limit, limit);
+        List<Post> posts = postRepository.getPostsByCategoryId(categoryId, pageable);
 
         for (Post post : posts){
             GetPostsByCategoryResponse temp = new GetPostsByCategoryResponse();

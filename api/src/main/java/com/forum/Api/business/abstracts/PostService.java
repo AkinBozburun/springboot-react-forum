@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface PostService {
     List<GetAllPostResponse> getAll();
-    List<GetPostsByCategoryResponse> getPostsByCategoryId(int id);
+    List<GetPostsByCategoryResponse> getPostsByCategoryId(int categoryId, int skip, int limit);
     Post getPostById(int id);
     void createPost(CreatePostRequest createPostRequest);
     void deletePost(DeletePostRequest deletePostRequest);

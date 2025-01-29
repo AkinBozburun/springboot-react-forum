@@ -4,7 +4,12 @@ import com.forum.Api.business.abstracts.UserService;
 import com.forum.Api.business.requests.User.CreateUserRequest;
 import com.forum.Api.business.requests.User.DeleteUserRequest;
 import com.forum.Api.business.requests.User.UpdateUserRequest;
+import com.forum.Api.business.responses.ResponseType;
+import com.forum.Api.business.responses.ResponseWrapper;
+import com.forum.Api.common.ResponseMessage;
 import com.forum.Api.entities.concretes.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,22 +23,26 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable int id) {
-        return userService.getUserById(id);
+    public ResponseEntity<ResponseWrapper<User>> getUserById(@PathVariable int id) {
+        User user = userService.getUserById(id);
+        return ResponseMessage.generateResponseMessage(ResponseType.SUCCESS, user, HttpStatus.OK);
     }
 
     @PostMapping("/create")
-    public void createUser(CreateUserRequest createUserRequest) {
+    public ResponseEntity<ResponseWrapper<String>> createUser(CreateUserRequest createUserRequest) {
         userService.createUser(createUserRequest);
+        return ResponseMessage.generateResponseMessage(ResponseType.SUCCESS, "User successfully created.", HttpStatus.OK);
     }
 
     @PutMapping("/update")
-    public void updateUser(UpdateUserRequest updateUserRequest){
+    public ResponseEntity<ResponseWrapper<String>> updateUser(UpdateUserRequest updateUserRequest){
         userService.updateUserById(updateUserRequest);
+        return ResponseMessage.generateResponseMessage(ResponseType.SUCCESS, "Post successfully updated.", HttpStatus.OK);
     }
 
     @DeleteMapping("/delete")
-    public void deleteUserById(DeleteUserRequest deleteUserRequest){
+    public ResponseEntity<ResponseWrapper<String>> deleteUserById(DeleteUserRequest deleteUserRequest){
         userService.deleteUserById(deleteUserRequest);
+        return ResponseMessage.generateResponseMessage(ResponseType.SUCCESS, "Post successfully deleted.", HttpStatus.OK);
     }
 }

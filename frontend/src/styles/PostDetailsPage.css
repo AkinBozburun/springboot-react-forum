@@ -1,0 +1,136 @@
+.comment-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.comment-list {
+    text-align: center;
+    width: 100%;
+}
+
+.comment-item {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.user-info-container {
+    width: 250px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    min-height: 250px;
+    height: auto;
+    box-sizing: border-box;
+    overflow: visible;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+.user-role {
+    margin-top: 5px;
+    opacity: 0.5;
+}
+
+.comment-content {
+    width: 60%;
+    background-color: #fefefe;
+    padding: 20px;
+    height: auto;
+    text-align: left;
+    border-top: 1px solid rgba(0, 0, 0, 0.26);
+    border-right: 1px solid rgba(0, 0, 0, 0.26);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+    box-sizing: border-box;
+    overflow: visible;
+    word-wrap: break-word;
+}
+
+.comment-arrow {
+    position: absolute;
+    margin-left: 225px;
+    margin-top: 40px;
+    transform: rotateZ(45deg);
+    width: 25px;
+    height: 25px;
+    background-color: #fefefe;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+    border-left: 1px solid rgba(0, 0, 0, 0.26);
+    z-index: 1;
+}
+
+.user-info-wrapper {
+    justify-content: center;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.user-display-name {
+    font-size: 24px;
+}
+
+.comment-input {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    outline: none;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.comment-input:focus {
+    background-color: #FFFFFF;
+}
+
+.comment-form {
+    text-align: right;
+}
+
+.comment-submit-button {
+    border: none;
+    background-color: #0099CC;
+    color: #FFFFFF;
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.comment-submit-button:hover {
+    background-color: #0099FF;
+}
+
+@media (max-width: 768px) {
+    .user-info-container {
+        width: 100%;
+        border-bottom: none;
+        text-align: left;
+        padding-left: 25px;
+        min-height: 200px;
+        height: 200px;
+    }
+
+    .comment-content {
+        width: 100%;
+        min-height: 100px;
+        border-left: 1px solid rgba(0, 0, 0, 0.26);
+    }
+
+    .comment-item {
+        flex-direction: column;
+    }
+
+    .comment-arrow {
+        margin-top: 176px;
+        margin-left: 5%;
+        margin-right: 50%;
+        border: none;
+        border-left: 1px solid rgba(0, 0, 0, 0.26);
+        border-top: 1px solid rgba(0, 0, 0, 0.26);
+    }
+}

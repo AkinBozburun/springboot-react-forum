@@ -1,0 +1,150 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0 100px 0;
+  background-color: #f4f7fc;
+  font-family: 'Arial', sans-serif;
+}
+
+.register-container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.register-container h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #0099cc;
+}
+
+.terms-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.terms-group input {
+  margin-right: 10px;
+}
+
+.terms-group label {
+  font-size: 14px;
+  color: #666;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background-color: #0099cc;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.register-btn:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.register-btn:hover:not(:disabled) {
+  background-color: #007bb5;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #0099cc;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.already-have-account {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.already-have-account a {
+  color: #0099cc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.already-have-account a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .register-container {
+    padding: 20px;
+  }
+
+  .register-container h2 {
+    font-size: 22px;
+  }
+}

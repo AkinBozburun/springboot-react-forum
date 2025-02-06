@@ -7,15 +7,16 @@ import Profile from './pages/Profile';
 import Register from './pages/Register';
 import Footer from './components/Footer';
 import PostDetails from './pages/PostDetails';
+import Header from './components/Header';
 import './App.css';
 
 const App = () => {
   return (
     <div className='App'>
       <NavBar />
+      <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path="/forum" element={<div>Forum Page</div>} />
         <Route path="/login" element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/profile' element={<Profile />} />

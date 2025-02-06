@@ -1,0 +1,41 @@
+.header {
+    padding: 40px;
+    background-color: #0099CC;
+    color: white;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.main-title {
+    margin: 0;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 24px;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .header-content {
+        margin-bottom: 10px;
+    }
+
+    .main-title {
+        font-size: 32px;
+    }
+
+    .sub-title {
+        font-size: 14px;
+    }
+}

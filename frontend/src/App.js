@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import Footer from './components/Footer';
 import PostDetails from './pages/PostDetails';
 import Header from './components/Header';
+import CreatePost from './pages/CreatePostPage';
 import './App.css';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/register' element={<Register />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/postDetails' element={<PostDetails />} />
+        <Route path='/createPost' element={<CreatePost />} />
       </Routes>
       <Footer />
     </div>

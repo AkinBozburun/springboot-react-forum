@@ -4,8 +4,7 @@ import '../styles/Footer.css';
 const Footer = () => {
   return (
 
-<footer class="footer">
-  <div class="footer-container">
+<footer class="footer">  
     <div class="footer-left">
       <p>&copy; 2025 All Rights Reserved</p>
     </div>
@@ -22,8 +21,7 @@ const Footer = () => {
         <li><a href="/" class="social-icon"><img src="https://cdn-icons-png.flaticon.com/256/124/124021.png" alt="Twitter" /></a></li>
         <li><a href="/" class="social-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVYDAcnVnJ-DFPYXNO9mQsSP9xjHF2L5Krkpl-issrajYCHSSaf8fleAtUJ1f082_zLOU&usqp=CAU" alt="LinkedIn" /></a></li>
       </ul>
-    </div>
-  </div>
+    </div>  
 </footer>
 
   );

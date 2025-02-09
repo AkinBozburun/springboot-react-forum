@@ -12,6 +12,7 @@ const NavBar = () => {
       <input type='checkbox' className='responsive-menu' /><label></label>
       <ul>
         <li><Link to={'/'} className='menu-links'>Home</Link></li>
+        <li><Link to='/createPost' className='menu-links'>Create Post</Link></li>
         <li><Link className='dropdown-arrow menu-links'>Products</Link>
           <ul className='sub-menus'>
             <li><Link to='/' className='menu-links'>Products 1</Link></li>
@@ -20,14 +21,7 @@ const NavBar = () => {
             <li><Link to='/' className='menu-links'>Products 4</Link></li>
           </ul>
         </li>
-        <li><Link to='/' className='menu-links'>About</Link></li>
-        <li><Link className='dropdown-arrow menu-links' >Services</Link>
-          <ul className='sub-menus'>
-            <li><Link to='/' className='menu-links'>Services 1</Link></li>
-            <li><Link to='/' className='menu-links'>Services 2</Link></li>
-            <li><Link to='/' className='menu-links'>Services 3</Link></li>
-          </ul>
-        </li>
+        <li><Link to='/' className='menu-links'>About</Link></li>  
         <li><Link to='/' className='menu-links'>Contact Us</Link></li>
       </ul>
       <div className="search-container">

@@ -1,7 +1,13 @@
+.post-details{
+    width: 100%;
+    display: flex;
+}
+
 .comment-section {
+    width: 70%;
+    margin: auto;
     margin-top: 100px;
     margin-bottom: 100px;
-    width: 100%;
 }
 
 .comment-list {
@@ -11,7 +17,6 @@
 
 .comment-item {
     display: flex;
-    justify-content: center;
     margin: 10px;
 }
 
@@ -32,9 +37,10 @@
 }
 
 .comment-content {
-    width: 60%;
+    width: 100%;
     background-color: #fefefe;
-    padding: 20px;
+    padding: 10px 20px;
+    min-height: 100px;
     height: auto;
     text-align: left;
     border-top: 1px solid rgba(0, 0, 0, 0.26);
@@ -43,6 +49,25 @@
     box-sizing: border-box;
     overflow: visible;
     word-wrap: break-word;
+    display: grid;
+    grid-template-rows: 35px auto 30px;
+}
+
+.comment-content p {
+    padding-bottom: 20px;
+}
+
+.comment-created-at {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+    opacity: .5;
+    margin-bottom: 10px;
+}
+
+.comment-updated-at {
+    text-align: right;
+    margin-top: 10px;
+    opacity: .5;
+    border-top: 1px solid rgba(0, 0, 0, 0.26);
 }
 
 .comment-arrow {
@@ -70,13 +95,15 @@
 
 .user-display-name {
     font-size: 24px;
+    color: #0099FF;
 }
 
 .comment-input {
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.26);
     padding: 10px;
-    width: 100%;
+    width: 95%;
+    margin: auto;
     height: 200px;
     outline: none;
     resize: none;
@@ -89,6 +116,7 @@
 
 .comment-form {
     text-align: right;
+    display: block;
 }
 
 .comment-submit-button {
@@ -113,6 +141,11 @@
         padding-left: 25px;
         min-height: 200px;
         height: 200px;
+    }
+
+    .user-role {
+        text-align: center;
+        width: 100px;
     }
 
     .comment-content {

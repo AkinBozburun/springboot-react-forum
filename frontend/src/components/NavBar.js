@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/NavBar.css';
 import { Link } from 'react-router-dom';
+import CategoryModal from './CategoryModal';
 
 const NavBar = () => {
+
+  const [showModal, setShowModal] = useState(false);
+
   const isLoggedIn = false;
   return (
     <nav id='menu'>
@@ -12,7 +16,8 @@ const NavBar = () => {
       <input type='checkbox' className='responsive-menu' /><label></label>
       <ul>
         <li><Link to={'/'} className='menu-links'>Home</Link></li>
-        <li><Link to='/createPost' className='menu-links'>Create Post</Link></li>
+        <li><Link onClick={() => setShowModal(true)} className='menu-links' >Create A Post</Link></li>
+        <CategoryModal show={showModal} onClose={() => setShowModal(false)}></CategoryModal>
         <li><Link className='dropdown-arrow menu-links'>Products</Link>
           <ul className='sub-menus'>
             <li><Link to='/' className='menu-links'>Products 1</Link></li>

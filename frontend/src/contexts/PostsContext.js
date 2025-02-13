@@ -1,0 +1,47 @@
+import React, { createContext, useState } from 'react';
+
+export const PostsContext = createContext();
+
+export const PostsProvider = ({ children }) =>
+{
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      title: "Best programming languages to learn in 2025",
+      comments: 120,
+      date: "Jan 20, 2025",
+      author: "JohnDoe",
+      imageUrl: "https://picsum.photos/200/100",
+    },
+    {
+      id: 2,
+      title: "How to improve your productivity with Pomodoro technique",
+      comments: 80,
+      date: "Feb 1, 2025",
+      author: "JaneSmith",
+      imageUrl: "https://picsum.photos/200/200",
+    },
+    {
+      id: 3,
+      title: "What's the best laptop for remote work in 2025?",
+      comments: 150,
+      date: "Jan 15, 2025",
+      author: "TechGuru",
+      imageUrl: "https://picsum.photos/200/300",
+    },
+    {
+      id: 4,
+      title: "What's the best laptop for remote work in 2025?",
+      comments: 150,
+      date: "Jan 15, 2025",
+      author: "TechGuru",
+      imageUrl: "https://picsum.photos/200/400",
+    },
+  ]);
+
+  return (
+    <PostsContext.Provider value={{ posts, setPosts }}>
+      {children}
+    </PostsContext.Provider>
+  );
+};
